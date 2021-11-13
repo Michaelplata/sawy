@@ -3,6 +3,6 @@ class Label:
         self.name = name
         self.id = id
 
-    def get_name(label):
-        return label['name']
+    def get_name(self):
+        return self.label['name']
         

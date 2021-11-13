@@ -9,15 +9,12 @@
     <title>sawy</title>
 </head>
 <body>
-    <header>
+    <main>
         <h1>sawy</h1>
         <nav>
           <ul>
             <li>
-              <a href="/new_transaction">NEW TRANSACTION</a>
-            </li>
-            <li>
-              <a href="/analysis">ANALYSIS</a>
+              <a href="/transactions">TRANSACTIONS</a>
             </li>
             <li>
               <a href="/merchants">MERCHANTS</a>
@@ -27,6 +24,12 @@
             </li>
           </ul>
         </nav>
-      </header>
+        <section id="content">
+          {% block content %}
+
+          {% endblock %}
+
+        </section>
+      </main>
 </body>
 </html>

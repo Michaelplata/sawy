@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form>
+    <h1>New Transaction</h1>
+</form>
+<section>
+    <h3>Merchant</h3>
+    <p>
+        <label for="merchant">
+            <span>Merchant:</span>
+        </label>
+        <select name="merchant_name" id="merchant"></select>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>
+    </p>
+    <h3>Label</h3>
+    <p>
+        <label for="label">
+            <span>Label:</span>
+        </label>
+        <select name="label_name" id="label"></select>
+            <option value="groceries">groceries:</option>
+            <option value="bills">bills</option>
+            <option value="savings">savings</option>
+        </select>
+    </p>
+</section>
+<section>
+    <h3>Amount</h3>
+    <p>
+        <label for="merchant">
+            <span>Merchant:</span>
+        </label>
+        <select name="merchant_name" id="merchant"></select>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>
+    </p>
+</section>
+<section>
+    <p>
+      <button type="add">Add</button>
+    </p>
+</section>
+{% endblock %}
