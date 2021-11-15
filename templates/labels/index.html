@@ -1,6 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>test</h1>
+<h1>labels</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+    </tr>
+    {% for label in labels %}
+    <tr>
+        <td><a href="/labels/{{ label.id }}"> {{label.name}}</a></td>
+    </tr>
+    {% endfor %}
+</table>
 
 {% endblock %}
