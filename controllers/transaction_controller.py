@@ -19,3 +19,15 @@ def new_transaction():
     labels = label_repository.select_all()
     return render_template("transactions/new.html", merchants=merchants, labels=labels)
 
+# To add new transaction to existing transactions
+
+@transactions_blueprint.route("/transactions", methods=["POST"])
+def create_transaction():
+    label_id = request.form['label_id']
+    merchant_id = request.form['merchant_id']
+    amount = request.form['amount']
+    label = label_repository.select(label_id)
+    merchant = merchant_repository.select(merchant_id)
+    transaction = Transaction(label, merchant, amount)
+    transaction_repository.save(transaction)
+    return redirect('/transactions')
