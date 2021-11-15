@@ -1,6 +1,21 @@
-<!-- {% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
-<h1>test</h1>
 
-{% endblock %} -->
+
+<a href="/transactions/new">New transaction</a>
+
+{% for transaction in transactions %}
+    <div class="transaction"></div>
+        <div class="label">
+            {{ transaction.label.name }}
+         <div class="merchant-details">
+            {{ transaction.merchant.name }}
+          <div class="amount">{{ transaction.amount }}
+        </div>
+    </div>
+    </div>
+    </div>
+{% endfor %}
+
+{% endblock %}

@@ -1,3 +1,7 @@
 header {
     background-color: #92BCEA;
   }
+
+  .transaction {
+    display: flex;
+  }
