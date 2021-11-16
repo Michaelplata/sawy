@@ -9,3 +9,10 @@ merchants_blueprint= Blueprint("merchants", __name__)
 def merchants():
     merchants = merchant_repository.select_all()
     return render_template('merchants/index.html', merchants=merchants)
+
+@merchants_blueprint.route("/merchants", methods=["POST"])
+def create_merchant():
+    name = request.form['merchant_id']
+    merchant = Merchant(name)
+    merchant_repository.save(merchant)
+    return redirect('/merchants')

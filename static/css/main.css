@@ -1,7 +1,42 @@
-header {
+/* html,body {
+  height: 100%;
+  overflow: hidden;
+} */
+
+
+/* header {
+    background-color: #92BCEA;
+  } */
+
+  /* .transaction {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+  } */
+
+  /* ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+  } */
+
+ 
+
+  main {
     background-color: #92BCEA;
   }
 
-  .transaction {
+  /* main > nav {
     display: flex;
+    flex-direction: row;
+  } */
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table-header {
+    width: 100%;
+    border-collapse: collapse;
   }

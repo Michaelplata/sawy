@@ -3,15 +3,31 @@
 
 <h1>labels</h1>
 
-<table>
-    <tr>
-        <th>Name</th>
-    </tr>
-    {% for label in labels %}
-    <tr>
-        <td><a href="/labels/{{ label.id }}"> {{label.name}}</a></td>
+<form action="/labels" method="post">
+    <label for="label">New Label:</label>
+    <input type="text" id="label" name="label_id">
+    
+      <button type='submit'>Add</button>
+</form>
+
+<table class="table-header">
+  <thead>
+      <th>Labels</th>
+  </thead>
+  <tbody>
+    {% for label in labels %} 
+    <tr class=labels-table>
+      <td>{{ label.name }}</td>
+    <form action="/labels/{{label.id}}" method="get">
+      <td><button type='submit'>Edit</button></td>
+    </form>
+      <form action="/labels/{{label.id}}/edit" method="post">
+      <td><button type='submit'>Save</button></td>
+    </form>
     </tr>
     {% endfor %}
+  </tbody>
+  <p>{{total}}</p>
 </table>
 
 {% endblock %}

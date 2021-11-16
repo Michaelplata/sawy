@@ -45,3 +45,9 @@ def merchant(transaction):
 def delete_all():
     sql = "DELETE FROM transactions"
     run_sql(sql)
+
+def show_total():
+    sql = "SELECT SUM(amount) FROM transactions"
+    total = run_sql(sql)
+    return total
+

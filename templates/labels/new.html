@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/labels" method="post">
+    <label for="new-label">New Label:</label>
+    <input type="text" id="name" name="label_id">
+    
+      <button type='submit'>Add</button>
+</form>
+
+{% endblock %}

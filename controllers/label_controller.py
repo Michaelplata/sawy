@@ -9,10 +9,28 @@ labels_blueprint = Blueprint("labels", __name__)
 @labels_blueprint.route('/labels')
 def labels():
     labels = label_repository.select_all()
-    return render_template('labels/index.html', labels = labels)
+    return render_template('labels/index.html', labels=labels)
 
 @labels_blueprint.route('/labels/<id>')
 def show(id):
     label = label_repository.select(id)
-    merchants = label_repository.merchants(label)
-    return render_template('labels/show.html', label=label, merchants=merchants)
+    return render_template('labels/edit.html', label=label)
+
+
+
+@labels_blueprint.route("/labels", methods=["POST"])
+def create_label():
+    name = request.form['label_id']
+    label = Label(name)
+    label_repository.save(label)
+    return redirect('/labels')
+
+@labels_blueprint.route('/labels/<id>/edit', methods=["GET"])
+def edit_label(id):
+    label = label_repository.select(id)
+    return render_template('labels/edit.html', label=label)
+
+@labels_blueprint.route('/labels/<id>', methods=['POST'])
+def update(id):
+    label = label_repository.select(id)
+    return render_template('labels/edit.html', label=label)

@@ -5,17 +5,25 @@
 
 <a href="/transactions/new">New transaction</a>
 
-{% for transaction in transactions %}
-    <div class="transaction"></div>
-        <div class="label">
-            {{ transaction.label.name }}
-         <div class="merchant-details">
-            {{ transaction.merchant.name }}
-          <div class="amount">{{ transaction.amount }}
-        </div>
-    </div>
-    </div>
-    </div>
-{% endfor %}
+
+    <table class="table-header">
+        <thead>
+            <th>Label</th>
+            <th>Merchant</th>
+            <th>Amount </th>
+        </thead>
+        <tbody>
+          {% for transaction in transactions %} 
+          <tr class=transactions-table>
+            <td>{{ transaction.label.name }}</td>
+            <td>{{ transaction.merchant.name }}</td>
+            <td>{{ transaction.amount }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+        <p>{{total}}</p>
+      </table>
+
+
 
 {% endblock %}
