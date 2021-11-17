@@ -3,26 +3,33 @@
 {% block content %}
 
 
-<a class="new-transaction" href="/transactions/new">New transaction</a>
 
+<a class="new-transaction" href="/transactions/new" >New transaction</a>
 
     <table class="table-header">
         <thead>
             <th>Label</th>
             <th>Merchant</th>
-            <th>Amount </th>
+            <th>Amount</th>
         </thead>
         <tbody>
           {% for transaction in transactions %} 
           <tr class=transactions-table>
-            <td>{{ transaction.label.name }}<hr></td>
-            <td>{{ transaction.merchant.name }}<hr></td>
-            <td>£ {{ transaction.amount }}<hr></td>
+            <td>{{ transaction.label.name }}</td>
+            <td>{{ transaction.merchant.name }}</td>
+            <td>£ {{ transaction.amount }}</td>
           </tr>
           {% endfor %}
         </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">
+              <h3 id="total">Total £{{ total }} </h3>
+            </td>
+          </tr>
+        </tfoot>
       </table>
-      <p class="total">Total: £ {{ total }}</p>
+      
 
 
 

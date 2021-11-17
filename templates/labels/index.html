@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>labels</h1>
-
 <form action="/labels" method="post">
     <label for="label">New Label:</label>
     <input type="text" id="label" name="label_id">
@@ -22,7 +20,7 @@
       <td><button type='submit'>Edit</button></td>
     </form>
     <form class="delete-form" action="/labels/{{label.id}}/delete" method="post">
-      <td><button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button></td>
+      <td><button style="font-size:13.3px">Delete <i class="fa fa-trash-o"></i></button></td>
     </form>
     </tr>
     {% endfor %}
