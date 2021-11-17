@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="/transactions" method="post">
+<form class="new-transactions" action="/transactions" method="post">
     <label for="label">Choose Label:</label>
         <select name="label_id" id="label">
             {% for label in labels %}

@@ -13,7 +13,6 @@ def transactions():
     transactions = transaction_repository.select_all()
     total = transaction_repository.show_total()
     return render_template("transactions/index.html", transactions=transactions, total=total)
-
 @transactions_blueprint.route("/transactions/new")
 def new_transaction():
     merchants = merchant_repository.select_all()

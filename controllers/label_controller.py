@@ -16,8 +16,6 @@ def show(id):
     label = label_repository.select(id)
     return render_template('labels/edit.html', label=label)
 
-
-
 @labels_blueprint.route("/labels", methods=["POST"])
 def create_label():
     name = request.form['label_id']
@@ -32,5 +30,12 @@ def edit_label(id):
 
 @labels_blueprint.route('/labels/<id>', methods=['POST'])
 def update(id):
-    label = label_repository.select(id)
-    return render_template('labels/edit.html', label=label)
+    label_name = request.form['label_name']
+    label = Label(label_name, id)
+    label_repository.update(label)
+    return redirect('/labels')
+
+@labels_blueprint.route("/labels/<id>/delete", methods=['POST'])
+def delete_label(id):
+    label_repository.delete(id)
+    return redirect('/labels')

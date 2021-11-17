@@ -1,6 +1,5 @@
 /* html,body {
   height: 100%;
-  overflow: hidden;
 } */
 
 
@@ -31,12 +30,73 @@
     flex-direction: row;
   } */
 
-  .table {
+  /* .table {
     width: 100%;
     border-collapse: collapse;
-  }
+    background-color: white;
+    
+  } */
 
   .table-header {
     width: 100%;
+    padding-top: 30px;
+    background-color: #fff;
+  }  
+  
+  .delete-form{
+    display: inline;
+  } */
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .transactions-table {
+    width: 100%;
     border-collapse: collapse;
+    text-align: center;
+  }
+  .container > li {
+    padding: 10px;
+    text-align: center;
+    font: size 2em;
+    color: #ffeead;
+    list-style-type: none;
+
+  }
+
+  .container > li:first-child {
+    background-color: #88d8b8;
+    border: 1px solid 
+  }
+  .container > li:nth-child(2) {
+    background-color: #88d8b8;
+    border: 1px solid 
+  }
+  .container > li:last-child {
+    background-color: #88d8b8;
+    border: 1px solid 
+  }
+
+  .total {
+    text-align: right;
+    padding-right: 60px;
+  }
+
+  .new-transaction {
+    border : 1px solid;
+    background-color: #88d8b8;
+  }
+
+  .new-transactions {
+    border: 1px solid;
+  }
+
+  body {
+    display: block;
+    margin: 8px;
   }

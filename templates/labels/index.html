@@ -21,13 +21,12 @@
     <form action="/labels/{{label.id}}" method="get">
       <td><button type='submit'>Edit</button></td>
     </form>
-      <form action="/labels/{{label.id}}/edit" method="post">
-      <td><button type='submit'>Save</button></td>
+    <form class="delete-form" action="/labels/{{label.id}}/delete" method="post">
+      <td><button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button></td>
     </form>
     </tr>
     {% endfor %}
   </tbody>
-  <p>{{total}}</p>
 </table>
 
 {% endblock %}

@@ -30,6 +30,11 @@ def select(id):
         label = Label(result['name'], result['id'])
     return label
 
+def update(label):
+    sql = "UPDATE labels SET name = %s WHERE id = %s"
+    values = [label.name, label.id]
+    run_sql(sql, values)
+
 def labels(merchant):
     labels = []
 
@@ -42,7 +47,12 @@ def labels(merchant):
         labels.append(label)
     return labels
 
+def delete(id):
+    sql = "DELETE  FROM labels WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 def delete_all():
     sql = "DELETE FROM labels"
     run_sql(sql)
+

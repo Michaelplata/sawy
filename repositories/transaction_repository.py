@@ -8,7 +8,7 @@ import repositories.label_repository as label_repository
 import repositories.merchant_repository as merchant_repository
 
 def save(transaction):
-    sql = "INSERT INTO transactions ( label_id, merchant_id, amount) VALUES ( %s, %s, %s ) RETURNING id"
+    sql = "INSERT INTO transactions ( label_id, merchant_id, amount) VALUES ( %s, %s, %s ) RETURNING *"
     values = [transaction.label.id, transaction.merchant.id, transaction.amount]
     results = run_sql(sql, values)
     transaction.id = results[0]['id']
@@ -49,5 +49,5 @@ def delete_all():
 def show_total():
     sql = "SELECT SUM(amount) FROM transactions"
     total = run_sql(sql)
-    return total
+    return total[0][0]
 

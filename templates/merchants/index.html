@@ -7,4 +7,23 @@
     
       <button type='submit'>Add</button>
 </form>
+
+<table class="table-header">
+  <thead>
+      <th>Merchants</th>
+  </thead>
+  <tbody>
+    {% for merchant in merchants %}
+    <tr class=merchants-table>
+      <td>{{ merchant.name }}</td>
+    <form action="/merchants/{{merchant.id}}" method="get">
+      <td><button type='submit'>Edit</button></td>
+    </form>
+    <form class="delete-form" action="/merchants/{{merchant.id}}/delete" method="post">
+      <td><button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button></td>
+    </form>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}

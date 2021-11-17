@@ -3,7 +3,7 @@
 {% block content %}
 
 
-<a href="/transactions/new">New transaction</a>
+<a class="new-transaction" href="/transactions/new">New transaction</a>
 
 
     <table class="table-header">
@@ -15,14 +15,14 @@
         <tbody>
           {% for transaction in transactions %} 
           <tr class=transactions-table>
-            <td>{{ transaction.label.name }}</td>
-            <td>{{ transaction.merchant.name }}</td>
-            <td>{{ transaction.amount }}</td>
+            <td>{{ transaction.label.name }}<hr></td>
+            <td>{{ transaction.merchant.name }}<hr></td>
+            <td>£ {{ transaction.amount }}<hr></td>
           </tr>
           {% endfor %}
         </tbody>
-        <p>{{total}}</p>
       </table>
+      <p class="total">Total: £ {{ total }}</p>
 
 
 
